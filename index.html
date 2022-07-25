@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapse / Expand Sidebar Tutorial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebartop">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="">
+                </div>
+                <div class="logo-mobile">
+                    <img src="/images/mobile.svg" alt="">
+                </div>
+                <div class="menu">
+                    <i class="bi bi-list"></i>
+                </div>
+            </div>
+            <div class="search">
+                <form action="">
+                    <button type="submit" class="callSearch"><i class="bi bi-search"></i></button><input type="text" placeholder="Search" class="searchInput">
+                </form>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="bi bi-speedometer"></i><span class="text">Dashboard</span></a></li>
+                    <li><a href="#"><i class="bi bi-file-earmark"></i><span class="text">Pages</span></a></li>
+                    <li><a href="#"><i class="bi bi-pencil-square"></i><span class="text">Posts</span></a></li>
+                    <li><a href="#"><i class="bi bi-people"></i><span class="text">Users</span></a></li>
+                    <li><a href="#"><i class="bi bi-gear"></i><span class="text">Settings</span></a></li>
+                </ul>
+            </nav>
+            <div class="account">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg" alt="">
+                </div>
+                <div class="name">
+                    <h4>The DevDrawer</h4>
+                    Adminstrator
+                </div>
+                <div class="logout">
+                    <a href="#"><i class="bi bi-box-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            [page content here]
+        </div>
+    </div>
+    <div class="searchWindow">
+        <button type="button" class="cancelSearch"><i class="bi bi-x"></i></button>
+        <h2>Search Our Site</h2>
+        <form action="">
+            <input type="text" placeholder="Enter your text">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <script src="/js/init.js"></script>
+</body>
+</html>

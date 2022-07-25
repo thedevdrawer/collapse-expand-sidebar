@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body {
+  color: #333;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+.container .sidebar {
+  background-color: #333;
+  color: #fff;
+  width: 30%;
+  height: 100%;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.1s ease-in-out;
+}
+.container .sidebar a {
+  color: #fff;
+  text-decoration: none;
+}
+.container .sidebar .sidebartop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1rem;
+  height: 55px;
+}
+.container .sidebar .sidebartop .logo {
+  width: 70%;
+}
+.container .sidebar .sidebartop .logo img {
+  height: auto;
+  width: 100%;
+}
+.container .sidebar .sidebartop .menu {
+  width: 20%;
+  text-align: end;
+}
+.container .sidebar .sidebartop .menu i {
+  cursor: pointer;
+  font-size: 1.75rem;
+}
+.container .sidebar .sidebartop .logo-mobile {
+  display: none;
+}
+.container .sidebar .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 1rem 0;
+}
+.container .sidebar .search button {
+  cursor: pointer;
+  width: auto;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  position: absolute;
+  font-size: 1.25rem;
+  left: 1.5rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .sidebar .search input {
+  background-color: #404040;
+  border: 0px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: calc(100% + 1rem);
+}
+.container .sidebar .search input::placeholder {
+  padding-left: 1.5rem;
+}
+.container .sidebar nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.container .sidebar nav ul li {
+  display: block;
+  align-items: center;
+  padding: 1.25rem 0;
+  position: relative;
+  background-color: transparent;
+  transition: background-color 0.25s ease-in-out;
+}
+.container .sidebar nav ul li a {
+  display: block;
+}
+.container .sidebar nav ul li a i {
+  font-size: 1.25rem;
+}
+.container .sidebar nav ul li a .text {
+  position: relative;
+  left: 1rem;
+  top: -0.2rem;
+}
+.container .sidebar .account {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: calc(100% - 2rem);
+  position: absolute;
+  bottom: 1rem;
+}
+.container .sidebar .account .avatar {
+  margin-right: 1rem;
+  width: 20%;
+}
+.container .sidebar .account .avatar img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.container .sidebar .account .name {
+  flex: 1 1 auto;
+}
+.container .sidebar .account .name h4 {
+  padding: 0;
+  margin: 0;
+}
+.container .sidebar .account .logout {
+  flex: 1 1 auto;
+  text-align: end;
+}
+.container .sidebar .account .logout i {
+  font-size: 1.5rem;
+}
+.container .main {
+  margin-left: calc(30% + 2rem);
+  padding: 1rem;
+}
+
+.short .sidebar {
+  width: 5%;
+  text-align: center;
+}
+.short .sidebar .logo, .short .sidebar .searchInput, .short .sidebar .text, .short .sidebar .avatar, .short .sidebar .name {
+  display: none;
+}
+.short .sidebar .sidebartop {
+  display: block;
+  height: 75px;
+}
+.short .sidebar .sidebartop .logo-mobile {
+  display: none;
+}
+.short .sidebar .sidebartop .menu {
+  width: 100%;
+  text-align: center;
+}
+.short .sidebar .text.hover {
+  display: block !important;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 3rem;
+  top: 1rem;
+  border-radius: 0.25rem;
+}
+.short .sidebar .account {
+  display: block;
+}
+.short .sidebar .account .logout {
+  width: 100%;
+  text-align: center;
+}
+.short .sidebar .search {
+  margin: 1.75rem -0.2rem;
+}
+.short .main {
+  margin-left: calc(5% + 2rem);
+}
+
+.searchWindow {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(51, 51, 51, 0.9);
+  z-index: 1;
+  top: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  padding-top: 20vh;
+  display: none;
+}
+.searchWindow input {
+  background-color: #bfbfbf;
+  border: 0px;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  width: 60vw;
+}
+.searchWindow input::placeholder {
+  padding-left: 0.5rem;
+}
+.searchWindow button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.searchWindow button.cancelSearch {
+  border: 0px;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  right: 2vw;
+}
+.searchWindow.active {
+  display: block;
+}
+
+@media (max-width: 844px) {
+  .container .sidebar {
+    width: 5%;
+    text-align: center;
+  }
+  .container .sidebar .logo, .container .sidebar .searchInput, .container .sidebar .text, .container .sidebar .avatar, .container .sidebar .name {
+    display: none;
+  }
+  .container .sidebar .sidebartop {
+    display: block;
+    height: auto;
+  }
+  .container .sidebar .sidebartop .logo-mobile {
+    display: block;
+  }
+  .container .sidebar .sidebartop .logo-mobile img {
+    height: auto;
+    width: 80%;
+  }
+  .container .sidebar .sidebartop .menu {
+    display: none;
+  }
+  .container .sidebar nav ul li {
+    padding: 0;
+  }
+  .container .sidebar nav ul li a {
+    padding: 0.6rem 0;
+  }
+  .container .sidebar .account {
+    display: block;
+  }
+  .container .sidebar .account .logout {
+    width: 100%;
+    text-align: center;
+  }
+  .container .sidebar .search {
+    margin: 1.5rem -0.2rem;
+  }
+  .container .main {
+    margin-left: calc(5% + 2rem);
+  }
+}
+@media (max-width: 390px) {
+  .container .sidebar {
+    width: 8%;
+  }
+  .container .sidebar nav ul li {
+    padding: 0;
+  }
+  .container .sidebar nav ul li a {
+    padding: 2rem 0;
+  }
+  .container .sidebar .search {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    margin-left: -0.5rem;
+  }
+  .container .main {
+    margin-left: calc(8% + 2rem);
+  }
+  .searchWindow {
+    padding: 0;
+    padding-top: 10vh;
+  }
+  .searchWindow input {
+    width: calc(100% - 2rem);
+  }
+  .searchWindow button {
+    width: calc(100% - 1rem);
+    margin-top: 0.5rem;
+  }
+}
